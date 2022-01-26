@@ -22,6 +22,7 @@ df["x1"] = [np.nan, 0.2654, 0.2615, 0.5846, 0.4615, 0.8308, 0.4962, 0.3269, 0.67
 df
 
 # Fit Imputer 
+
 # Create an imputer object that loks for  "NaN" values, then replace them with the mean value of the feature by columns (axis=0)
 
 mean_imputer = SimpleImputer(missing_values = "NaN", strategy = "mean")
