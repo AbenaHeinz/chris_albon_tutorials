@@ -79,4 +79,12 @@ By default, the GridSearchCV's cross validation uses 3-fold KFold of StratifiedK
 
 # create a classfier object with the classifire and parametre candidates
 clf = GridSearchCV(estimatior=svm.SVC(), param_grid = parameter_candidates, n_jobs=1)
-    
+
+#Train the classifier on data's features and target data  
+clf.fit(data1_features, data1_target)
+
+'''
+Sucess we have our result! First lets look at the accuracy score when we applythe model to the data1's test data 
+'''
+# View the accuracy score  
+print("Best score for data1:", clf.best_score_)
