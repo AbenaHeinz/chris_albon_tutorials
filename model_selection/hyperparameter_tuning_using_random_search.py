@@ -10,7 +10,7 @@ X = iris.data
 y = iris.target
 
 # create logistice regression 
-logistic = linear_model.LogisticRegression()
+logistic = linear_model.LogisticRegression(C=1, penalty='l1', solver='liblinear')
 
 # create regulilization penalty space  
 penalty = ['11', '12']
@@ -28,5 +28,8 @@ clf = RandomizedSearchCV(logistic, hyperparameters, random_state=1, n_iter=100, 
 best_model = clf.fit(X,y)
 
 #veiw best hyperparameter
-print("Best Penalty:", best_model, best_estimator_.get_params()["penalty"])
-print("Best C:", best_model, best_estimator_.get_params()["C"]) 
+print("Best Penalty:", best_model.best_estimator_.get_params()["penalty"])
+print("Best C:", best_model.best_estimator_.get_params()["C"]) 
+
+# predict target vectors 
+best_model.predcit(X)
