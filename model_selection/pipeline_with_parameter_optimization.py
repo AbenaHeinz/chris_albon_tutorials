@@ -38,7 +38,7 @@ n_components = list(range(1, X.shape[1]+1,1))
 C = np.logspace(-4, 4, 50)
 
 # Create a list of options for the regualization penalty 
-penalty = ["11", "12"]
+penalty = ['11', '12']
 
 # create a dictionary of all of the parametre options 
 # note has your can access teh parametres of steps of a pipeline using '__'
@@ -49,3 +49,11 @@ clf = GridSearchCV(pipe, parametres)
 
 # fit the grid seach  
 clf.fit(X, y)
+
+# view the best parameters 
+print("Best Penalty:", clf_best_estimator_.get_params()["logistic__penalty"] )
+print("Best C:", clf_best_estimator_.get_params()["logistic__C"])
+print("Best Number of Components:", clf_best_estimators_.getparams()["pca__n_components"])
+
+# Fit the grid search ysing 3-fold cross validation 
+cross_val_score(clf, X,y)
