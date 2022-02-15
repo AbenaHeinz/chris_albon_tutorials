@@ -33,3 +33,12 @@ clf = IsolationForest(bootstrap=True, n_estimators=100, contamination="auto", be
 
 # train the isolation forest  
 clf.fit(X_with_outlier)
+
+#create a new data point that is an outlier
+new_data_point =[[200,200]]
+
+# predicts if the new data points is an outlier, (1 is not an outlier and -1 is an outlier)
+clf.predict(new_data_point)
+
+# display the anomaly score for the new data point(lower is more abnormal)
+clf.score_samples(new_data_point)
